@@ -1,0 +1,65 @@
+dataset:
+  name: cifar10
+  root: "./data"
+  num_workers: 2
+  img_height: 32
+  img_width: 32
+  in_channels: 3
+  num_classes: 10
+  transform: augment
+  shuffle: 1
+
+criterion:
+  name: ce
+  diff_loss_fn: l2
+  diff_loss_weight: 0
+  block_match_method: meanR
+
+optimizer:
+  name: sgd
+  lr: 0.02
+  weight_decay: 0.0001
+
+scheduler:
+  name: step
+  lr_gamma: 0.99
+  lr_min: 0
+
+run:
+  experiment: "cifar/vgg"
+  n_epochs: 200
+  batch_size: 64
+  use_cuda: 1
+  gpu_id: 0
+  deterministic: 1
+  random_state: 42
+  log_interval: 200
+  train_noise: 0
+
+checkpoint:
+  save_best_model_k: 5
+  checkpoint_dir: "cifar/vgg"
+  model_comment: ""
+  resume: 0
+  restore_checkpoint: ""
+  no_linear: 0
+
+quantization:
+  input_quant_method: uniform_noise
+  weight_quant_method: log
+  weight_bit: 4
+  input_bit: 4
+  quant_noise: 1
+
+model:
+  name: "vgg8"
+  mode: block
+  block_size: 64
+
+PTC:
+  assign: 1
+  hasZero: 1
+  loss_factor: 0.128
+
+debug:
+  verbose: 1

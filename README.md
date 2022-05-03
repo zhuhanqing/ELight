@@ -10,6 +10,7 @@
 By [Hanqing Zhu](https://github.com/zhuhanqing), [Jiaqi Gu](https://github.com/JeremieMelo), [Chenghao Feng](https://github.com/Fengchenghao1996), Mingjie Liu, Zixuan Jiang, Ray T. Chen and David Z. Pan.
 
 This repo is the official implementation of "ELight: Enabling Efficient Photonic In-Memory Neurocomputing with Life Enhancement"[[Preprint](https://arxiv.org/abs/2112.08512)].
+The results in the GitHub are not from the fully-trained model, but from models in early epoches. I will update the results quickly.
 
 # Introduction
 **ELight** is a synergistic aging-aware co-optimization framework, aiming at trimming down the needed number of write operations when utilizing the emerging PCM-based photonic neuroengine \[[Nature'21](https://www.nature.com/articles/s41586-020-03070-1) \|\[[APR'20](https://aip.scitation.org/doi/10.1063/5.0001942) \| for inference tasks.
